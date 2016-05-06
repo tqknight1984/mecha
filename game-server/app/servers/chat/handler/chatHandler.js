@@ -19,6 +19,7 @@ var handler = Handler.prototype;
  *
  */
 handler.send = function(msg, session, next) {
+	console.log("chat send...");
 	var rid = session.get('rid');
 	var username = session.uid.split('*')[0];
 	var channelService = this.app.get('channelService');

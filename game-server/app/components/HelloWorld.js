@@ -13,14 +13,17 @@ var HelloWorld = function(app, opts) {
     this.timerId = null;
 };
 
+//tq
+var snowflake = require('../util/snowflake');
+
 HelloWorld.name = '__HelloWorld__';
 
 HelloWorld.prototype.start = function(cb) {
     console.log('Hello World Start');
-    var self = this;
-    this.timerId = setInterval(function() {
-        console.log(self.app.getServerId() + ": Hello World!");
-    }, this.interval);
+    //var self = this;
+    //this.timerId = setInterval(function() {
+    //    console.log(self.app.getServerId() + ": Hello World! >>> "+snowflake.nextId());
+    //}, this.interval);
     process.nextTick(cb);
 }
 

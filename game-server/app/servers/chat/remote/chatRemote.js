@@ -30,6 +30,7 @@ ChatRemote.prototype.add = function(uid, sid, name, flag, cb) {
 	}
 
 	cb(this.get(name, flag));
+
 };
 
 /**

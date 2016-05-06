@@ -19,6 +19,7 @@ var handler = Handler.prototype;
  *
  */
 handler.queryEntry = function(msg, session, next) {
+	console.log("queryEntry");
 	var uid = msg.uid;
 	if(!uid) {
 		next(null, {
@@ -42,14 +43,12 @@ handler.queryEntry = function(msg, session, next) {
 		port: res.clientPort
 	});
 
-
-	console.log("gete=========2=========gettime begin");
+	console.log("gat a rpc test");
 	var routeParam = Math.floor(Math.random()*10);
 	this.app.rpc.time.timeRemote.getCurrentTime(routeParam, "arg111", "arg222",  function(hour, min, sec) {
 		// ...
-		console.log("gete==========call back========>"+hour+"|"+min+"|"+sec);
+		console.log("gete==========rpc test call back========>"+hour+"|"+min+"|"+sec);
 	});
-	console.log("gete==================gettime end");
 
 
 };
